@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 30, 2019 at 10:34 AM
+-- Generation Time: Mar 30, 2019 at 12:34 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.2
 
@@ -99,7 +99,6 @@ CREATE TABLE `users` (
   `email_verified_at` timestamp NULL DEFAULT NULL,
   `password` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `user_type` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'client',
-  `gender` tinyint(1) NOT NULL DEFAULT '0',
   `phone` int(11) DEFAULT NULL,
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -113,8 +112,9 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `user_type`, `gender`, `phone`, `remember_token`, `created_at`, `updated_at`, `request_id`, `price`, `rate`) VALUES
-(3, 'a', 'a@b.c', NULL, '$2y$10$aPhRfat9FGYQzcD1FQ1PI.i4SMNxCx.aPXwVaumWi9Me4asumti2e', 'client', 0, NULL, NULL, '2019-03-30 07:29:07', '2019-03-30 07:29:07', NULL, NULL, NULL);
+INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `user_type`, `phone`, `remember_token`, `created_at`, `updated_at`, `request_id`, `price`, `rate`) VALUES
+(3, 'a', 'a@b.c', NULL, '$2y$10$aPhRfat9FGYQzcD1FQ1PI.i4SMNxCx.aPXwVaumWi9Me4asumti2e', 'client', NULL, NULL, '2019-03-30 07:29:07', '2019-03-30 07:29:07', NULL, NULL, NULL),
+(4, 'a', 'a@b.com', NULL, '$2y$10$38iDyhVvuFBO503i1hU8POAN3KDyQKDVomOaeMKTx57lJTXNJ5Dwi', 'client', NULL, NULL, '2019-03-30 08:59:42', '2019-03-30 08:59:42', NULL, NULL, NULL);
 
 --
 -- Indexes for dumped tables
@@ -178,7 +178,7 @@ ALTER TABLE `request`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Constraints for dumped tables
