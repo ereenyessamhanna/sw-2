@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Photographer;
 
 class HomeController extends Controller
 {
@@ -23,6 +24,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $photographers = Photographer::query()
+        ->where('user_type', 'LIKE', 'photographer') 
+        ->get();;
+        return view('home')->with('photographers',$photographers);
     }
 }
